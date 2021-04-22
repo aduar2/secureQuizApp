@@ -1,0 +1,2 @@
+{% block header %} <h1> ____________? </h1> {% endblock %}
+{% block content %} {% endblock %}
