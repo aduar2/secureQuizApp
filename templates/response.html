@@ -1,1 +1,15 @@
+{% extends "layout.html" %}
 
+{% block header %}Results{% endblock %}
+
+{% block content %}
+  <h1>Your Results:</h1>
+<ul>
+ <li> You answered the first question {{ session['result1'] }}. Dr. Pepper was invented in 1885, Coca Cola in 1886, and Pespi much later in 1896.</li>
+ <li> You answered the second question {{ session['result2'] }}. Most soft drink creators were pharmacists, becuase at the time, pharmacists also served fizzy drinks.</li>
+ <li> You answered the 3rd question {{ session['result3'] }}. Fanta was created as a substitute for Coca Cola after World War II caused a shortage of ingredients.</li>
+</ul>
+
+<p> Your total score was {{ session['score'] }} </p>
+
+{% endblock %}
