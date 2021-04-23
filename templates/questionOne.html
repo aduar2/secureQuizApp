@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block header %}Question 1{% endblock %}
+
+{% block content %}
+  <h1>In which order were these sodas invented?</h1>
+
+ <form action={{ url_for("renderPage2") }} method="POST">
+   First name:<br>
+   <input type="radio" name="order" value = "false">
+   <label for="false">Coca Cola, Dr Pepper, Pepsi</label><br>
+   <input type="radio" name="order" value = "true">
+   <label for="false">Dr Pepper, Coca Cola, Pepsi</label><br>
+   <input type="radio" name="order" value = "false">
+   <label for="false">Pepsi, Coca Cola, Dr Pepper</label><br>
+   <input type="radio" name="order" value = "false">
+   <label for="false">Coca Cola, Pepsi, Dr Pepper</label><br>
+   <input type="submit" value="Submit">
+ </form> 
+
+{% endblock %}
