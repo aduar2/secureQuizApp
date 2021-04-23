@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block header %}Question 3{% endblock %}
+
+{% block content %}
+  <h1>What event caused the invention of Fanta</h1>
+
+ <form action={{ url_for("renderPage2") }} method="POST">
+   First name:<br>
+   <input type="radio" name="order" value = "true">
+   <label for="false">World War II</label><br>
+   <input type="radio" name="order" value = "false">
+   <label for="false">The Korean War</label><br>
+   <input type="radio" name="order" value = "false">
+   <label for="false">Explorer 1 Launch</label><br>
+   <input type="radio" name="order" value = "false">
+   <label for="false">Prohibition</label><br>
+   <input type="submit" value="Submit">
+ </form> 
+
+{% endblock %}
