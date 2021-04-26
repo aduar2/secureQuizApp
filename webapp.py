@@ -36,20 +36,20 @@ def renderResponse():
     session["score"] = 0
     
     if session["quest1"] == "DCP":
-        session["response1"] = "correctly"
+        session["result1"] = "correctly"
         session["score"] = session["score"] + 1
     else:
-        session["response1"] = "incorrectly"
+        session["result1"] = "incorrectly"
     if session["quest2"] == "phar":
-        session["response2"] = "correctly"
+        session["result2"] = "correctly"
         session["score"] = session["score"] + 1
     else:
-        session["response2"] = "incorrectly"
+        session["result2"] = "incorrectly"
     if session["quest3"] == "ww2":
-        session["response3"] = "correctly"
+        session["result3"] = "correctly"
         session["score"] = session["score"] + 1
     else:
-        session["response3"] = "incorrectly"
+        session["result3"] = "incorrectly"
     return render_template('response.html')
     
 if __name__=="__main__":
