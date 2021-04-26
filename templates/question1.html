@@ -6,7 +6,6 @@
   <h1>In which order were these sodas invented?</h1>
 
  <form action={{ url_for("renderQ2") }} method="POST">
-   First name:<br>
    <input type="radio" name="order" value = "CDP">
    <label for="false">Coca Cola, Dr Pepper, Pepsi</label><br>
    <input type="radio" name="order" value = "DCP">
@@ -16,6 +15,7 @@
    <input type="radio" name="order" value = "CPD">
    <label for="false">Coca Cola, Pepsi, Dr Pepper</label><br>
    <input type="submit" value="Submit">
- </form> 
+ </form>
+<br>
 
 {% endblock %}
