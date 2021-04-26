@@ -6,7 +6,6 @@
   <h1>What event caused the invention of Fanta?</h1>
 
  <form action={{ url_for("renderResponse") }} method="POST">
-   First name:<br>
    <input type="radio" name="event" value = "ww2">
    <label for="false">World War II</label><br>
    <input type="radio" name="event" value = "tkw">
@@ -16,6 +15,7 @@
    <input type="radio" name="event" value = "proh">
    <label for="false">Prohibition</label><br>
    <input type="submit" value="Submit">
- </form> 
+ </form>
+<br>
 
 {% endblock %}
