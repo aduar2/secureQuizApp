@@ -22,17 +22,30 @@ def renderQ1():
 
 @app.route('/question2',methods=['GET','POST'])
 def renderQ2():
-    session["result1"]=request.form['order']
+    session["quest1"]=request.form['order']
     return render_template('question2.html')
 
 @app.route('/question3',methods=['GET','POST'])
 def renderQ3():
-    session["result2"]=request.form['job']
+    session["quest2"]=request.form['job']
     return render_template('question3.html')
 
 @app.route('/response',methods=['GET','POST'])
 def renderResponse():
-    session["result3"]=request.form['event']
+    session["quest3"]=request.form['event']
+    
+    if session["quest1"] == "DCP":
+        session["response1"] = true
+    else:
+        session["response1"] = false
+    if session["quest2"] == "phar":
+        session["response2"] = true
+    else:
+        session["response2"] = false
+    if session["quest3"] == "ww2":
+        session["response3"] = true
+    else:
+        session["response3"] = false
     return render_template('response.html')
     
 if __name__=="__main__":
