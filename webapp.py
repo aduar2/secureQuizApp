@@ -33,19 +33,23 @@ def renderQ3():
 @app.route('/response',methods=['GET','POST'])
 def renderResponse():
     session["quest3"]=request.form['event']
+    session["score"] = 0
     
     if session["quest1"] == "DCP":
-        session["response1"] = true
+        session["response1"] = "correctly"
+        session["score"] = session["score"] + 1
     else:
-        session["response1"] = false
+        session["response1"] = "incorrectly"
     if session["quest2"] == "phar":
-        session["response2"] = true
+        session["response2"] = "correctly"
+        session["score"] = session["score"] + 1
     else:
-        session["response2"] = false
+        session["response2"] = "incorrectly"
     if session["quest3"] == "ww2":
-        session["response3"] = true
+        session["response3"] = "correctly"
+        session["score"] = session["score"] + 1
     else:
-        session["response3"] = false
+        session["response3"] = "incorrectly"
     return render_template('response.html')
     
 if __name__=="__main__":
