@@ -9,6 +9,9 @@ app.secret_key=os.environ["SECRET_KEY"];
 
 @app.route('/')
 def renderMain():
+    session["secure1"] = true
+    session["secure2"] = true
+    session["secure3"] = true
     return render_template('home.html')
 
 @app.route('/startOver')
@@ -22,17 +25,24 @@ def renderQ1():
 
 @app.route('/question2',methods=['GET','POST'])
 def renderQ2():
-    session["quest1"]=request.form['order']
+    if session["secure1"] == true:
+        session["quest1"]=request.form['order']
+    session["secure1"] = false
     return render_template('question2.html')
 
 @app.route('/question3',methods=['GET','POST'])
 def renderQ3():
-    session["quest2"]=request.form['job']
+    if session["secure2"] == true:
+        session["quest2"]=request.form['job']
+    session["secure2"] = false
     return render_template('question3.html')
 
 @app.route('/response',methods=['GET','POST'])
 def renderResponse():
-    session["quest3"]=request.form['event']
+    if session["secure3"] == true:
+        session["quest3"]=request.form['event']
+    session["secure3"] = false
+        
     session["score"] = 0
     
     if session["quest1"] == "DCP":
