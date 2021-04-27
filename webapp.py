@@ -9,9 +9,9 @@ app.secret_key=os.environ["SECRET_KEY"];
 
 @app.route('/')
 def renderMain():
-    session["secure1"] = true
-    session["secure2"] = true
-    session["secure3"] = true
+    session["secure1"] = True
+    session["secure2"] = True
+    session["secure3"] = True
     return render_template('home.html')
 
 @app.route('/startOver')
@@ -25,23 +25,23 @@ def renderQ1():
 
 @app.route('/question2',methods=['GET','POST'])
 def renderQ2():
-    if session["secure1"] == true:
+    if session["secure1"] == True:
         session["quest1"]=request.form['order']
-    session["secure1"] = false
+    session["secure1"] = False
     return render_template('question2.html')
 
 @app.route('/question3',methods=['GET','POST'])
 def renderQ3():
-    if session["secure2"] == true:
+    if session["secure2"] == True:
         session["quest2"]=request.form['job']
-    session["secure2"] = false
+    session["secure2"] = False
     return render_template('question3.html')
 
 @app.route('/response',methods=['GET','POST'])
 def renderResponse():
-    if session["secure3"] == true:
+    if session["secure3"] == True:
         session["quest3"]=request.form['event']
-    session["secure3"] = false
+    session["secure3"] = False
         
     session["score"] = 0
     
